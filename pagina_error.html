@@ -1,0 +1,681 @@
+<html class=" "><head>
+        <title>SICOES</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link href="/css/external/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+        <!-- Template -->
+        <link href="/css/portal.css" rel="stylesheet" type="text/css" media="all">
+        <link href="/css/portal-admin.css" rel="stylesheet" type="text/css" media="all">
+        <!-- DataTables -->
+        <link href="/css/external/datatables/dataTables.bootstrap.css" rel="stylesheet">
+        <!--iCheck for checkboxes and radio inputs-->
+        <link rel="stylesheet" href="/css/adminTemplate/iCheck/all.css">
+        <!--Datepicker-->
+        <link rel="stylesheet" href="/css/external/datepicker/datepicker.css">
+        <!--Nprogress-->
+        <link rel="stylesheet" href="/css/external/nprogress/nprogress.css">
+        <!--Download Server-->
+        <link rel="stylesheet" href="/lib/download/downloadserver.css">
+        <!--captcha Google Verificacion de 2 pasos -->
+        <!-- js -->
+        <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-QNSYMHYZRX&amp;l=dataLayer&amp;cx=c&amp;gtm=457e4cc1za200"></script><script src="/lib/js/external/jquery/jquery.min.js"></script>
+        <script src="/lib/js/external/auto/jquery.disable.autocomplete.min.js"></script>
+        <script src="/lib/js/app/portal-admin.js"></script>
+    </head>
+    <body>
+        <!-- header -->
+        <nav class="navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div style="padding: 0 1em;">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="body-top-left"> </div>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right menu-cabecera">
+                            <li class=""><a href="/portal/index.php">Inicio</a></li>
+                            <li class="submenu active">
+                                <span class="dropdown nombreMenu">Contrataciones<div class="caret"></div></span>
+                                <ul class="child menu" style="display: none;">
+                                    <li>
+                                        <span class="dropdown">Búsqueda<div class="caret"></div></span>
+                                        <ul class="deep-child menu" style="display: none;">
+                                            <li><a href="/portal/contrataciones/busqueda/convocatorias.php?tipo=convNacional">Convocatorias</a></li>
+                                            <li><a href="/portal/contrataciones/busqueda/convocatorias.php?tipo=convInternacional">Convocatorias Internacionales</a></li>
+                                            <li><a href="/portal/contrataciones/busqueda/contResueltos.php">Contratos Resueltos</a></li>
+                                            <li><a href="/portal/contrataciones/busqueda/desistimientoCont.php">Desistimientos de contrato</a></li>
+                                            <div class="bf"></div>
+                                         </ul>
+                                    </li>
+                                    <li><a href="/portal/contrataciones/pac/pac.php">Programa Anual de Contrataciones</a></li>
+                                    <li>
+                                        <span class="dropdown">Otras publicaciones<div class="caret"></div></span>
+                                        <ul class="deep-child menu" style="display: none;">
+                                            <li><a href="/portal/contrataciones/otrasPublicaciones/requerimientoPersonal.php">Requerimiento de Personal</a></li>
+                                            <li><a href="/portal/contrataciones/otrasPublicaciones/convDisposicionBienes.php">Arrendamiento, remate y otros</a></li>
+                                            <li><a href="/portal/contrataciones/otrasPublicaciones/contOtrosPaises/contOtrosPaises.php">Contrataciones de otros países</a></li>
+                                            <div class="bf"></div>
+                                         </ul>
+                                    </li>
+                                    <li><a href="/portal/formularios/formularios.php">Formularios</a></li>
+                                    <div class="bf"></div>
+                                </ul>
+                            </li>
+                            <li class="submenu ">
+                                <span class="dropdown nombreMenu">Destino de Bienes<div class="caret"></div></span>
+                                <ul class="child menu" style="display: none;">
+                                    <li><a href="https://sigep.gob.bo/procesoCompra/#/disposicionbienes/listaConvocatorias" target="_blank">Destino de Bienes Dados de Baja</a></li>
+                                    <div class="bf"></div>
+                                </ul>
+                            </li>
+
+                            <li class="">
+                                <a href="/portal/rupe/guiaProveedores.php" class="nombreMenu">RUPE</a>
+                            </li>
+                            <li class="submenu ">
+                                <span class="dropdown nombreMenu">Normativa<div class="caret"></div></span>
+                                <ul class="child menu" style="display: none;">
+                                    <li><a href="/portal/normativa/decretos.php">Decretos, reglamentos y modelos</a></li>
+                                    <div class="bf"></div>
+                                </ul>
+                            </li>
+                            <li class="submenu ">
+                                <span class="dropdown nombreMenu">Incumplidos<div class="caret"></div></span>
+                                <ul class="child menu" style="display: none;">
+                                    <li><a href="/portal/incumplidos/incPacEstProceso.php?tipo=estadoProceso">Entidades inhabilitadas</a></li>
+                                    <li><a href="/portal/incumplidos/entidadesExcepcion.php">Entidades con excepción para el registro</a></li>
+                                    <div class="bf"></div>
+                                </ul>
+                            </li>
+                            <li class="submenu ">
+                                <span class="dropdown nombreMenu">Clasificadores<div class="caret"></div></span>
+                                <ul class="child menu" style="display: none;">
+                                    <li><a href="/portal/clasificadores/institucional.php">Institucional</a></li>
+                                    <li><a href="/portal/clasificadores/partidas.php">Partidas</a></li>
+                                    <li><a href="/portal/clasificadores/organismoFinanciadores.php">Organismos Financiadores</a></li>
+                                    <li><a href="/portal/clasificadores/usuarios.php">Usuarios Habilitados</a></li>
+                                    <div class="bf"></div>
+                                </ul>
+                            </li>
+                            <li class="submenu ">
+                                <span class="dropdown nombreMenu">Compro Hecho en Bolivia<div class="caret"></div></span>
+                                <ul class="child menu" style="display: none;">
+                                    <li><a href="https://sigep.gob.bo/catBienes/#/catele/consultaCatalogoElectronico" target="_blank">Catálogo Electrónico CHB</a></li>
+                                    <li><a href="https://sigep.gob.bo/mercadoVirtual/#/home/CCHB" target="_blank">Mercado Virtual CHB</a></li>
+                                    <li><a href="/portal/contrataciones/busqueda/procesosNoFicha.php?tipo=noFicha">Procesos sin Ficha Técnica</a></li>
+                                    <li style="display: none"><a href="/portal/contrataciones/busqueda/convocatorias.php?tipo=convNacional&amp;subasta=S&amp;codigoNormativa=4505">Búsqueda de Procesos CHB</a></li>
+                                     <div class="bf"></div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- content -->
+        <div class="body-content">
+            <div class="container-fluid">
+                <div class="navigation">
+                    <nav class="navbar navbar-default">
+                        <span class="title">SISTEMA DE CONTRATACIONES ESTATALES</span>
+                        <div class="social pull-right">
+                            <a href="/portal/inicio/informacion.php" class="servc-grid pull-left " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Inf. Institucional">
+                                <div class="servc-grid-left">
+                                    <span class="glyphicon info">i</span>
+                                </div>
+                            </a>
+                            <a href="/portal/inicio/contactenos.php" class="servc-grid pull-left " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Contáctenos">
+                                <div class="servc-grid-left">
+                                    <span class="glyphicon glyphicon-earphone"></span>
+                                </div>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+                <div class="banner-bottom-grids">    <div class="form-busq tab">
+        <input id="colsConvocatoriasSimple" type="hidden" value="[&quot;TEK1dIkO&quot;,&quot;bvzttmyG&quot;,&quot;rO3vzaln&quot;,&quot;OCNlBxjj&quot;,&quot;UvP7O5XQ&quot;,&quot;LKNqlGXV&quot;,&quot;qVatXeHi&quot;,&quot;IFVA9Fpi&quot;,&quot;AWPT4XIQ&quot;,&quot;upvNH6Gp&quot;,&quot;zUtkOOuY&quot;,&quot;L6bwXuuN&quot;]" autocomplete="off">
+        <input id="colsConvocatoriasAvanzada" type="hidden" value="[&quot;inaSPAux&quot;,&quot;4yw8ymYs&quot;,&quot;woY284Jz&quot;,&quot;OL395jvM&quot;,&quot;8YrAVq17&quot;,&quot;cdc2c3Qt&quot;,&quot;mONmB3yL&quot;,&quot;FMs5AXX2&quot;,&quot;XBBL1XRa&quot;,&quot;E7sSOrqY&quot;,&quot;aMThf8br&quot;,&quot;HC9ynfsI&quot;,&quot;cpntze3n&quot;,&quot;PZyLplon&quot;,&quot;GEWy9AW1&quot;,&quot;ZuTnlECX&quot;,&quot;rGqOeXK1&quot;,&quot;qXuTdxuk&quot;,&quot;O8fP1Sfq&quot;,&quot;fCOQW6uN&quot;]" autocomplete="off">
+        <input id="codigoNormativa" type="hidden" value="" autocomplete="off">
+        <h4>
+            <span class="titulo pull-left">CONVOCATORIAS </span>
+            <ul class="btn-group tab-menu pull-right">
+                <li class="btn-group btn-group-sm active">
+                    <a class="btn btn-default" data-toggle="tab" href="#f-simple">Simple</a>
+                </li>
+                <li class="btn-group btn-group-sm ">
+                    <a class="btn btn-default" data-toggle="tab" href="#f-avanzada">Avanzada</a>
+                </li>
+            </ul>
+        </h4>
+    </div>
+    <div class="tab-content">
+        <!--Busqueda Simple-->
+        <div id="f-simple" class="tab-pane fade in active">
+            <span class="glyphicon glyphicon-minus btn-collapse" data-toggle="collapse" href="#formSimple"></span>
+            <form id="formSimple" class="form-horizontal width100 collapse in" onsubmit="return buscarConvocatorias('Simple','tablaSimple','formSimple',null,'convNacional')" method="post" autocomplete="off">
+                <div class="form-busq">
+                    <div class="row">
+                        <input type="hidden" class="form-control input-sm" name="codigoNormativa" value="" autocomplete="off">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <label class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label">Entidad:</label>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 margin-bottom-5 padding-0">
+                                <input type="text" class="form-control input-sm" name="entidad" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <label class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label">Objeto de Contratación:</label>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 margin-bottom-5 padding-0">
+                                <input type="text" class="form-control input-sm" name="objetoContrato" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 fechas">
+                            <label class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label">Fecha de publicación SICOES:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 margin-bottom-5 input-group">
+                                <input type="text" class="form-control input-sm datePicker" name="publicacionDesde" placeholder="dd/mm/aaaa" autocomplete="off">
+                                <div class="input-group-addon calendar"><span class="glyphicon glyphicon-calendar"></span></div>
+                            </div>
+                            <label class="control-label fecha">y</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 margin-bottom-5 input-group">
+                                <input type="text" class="form-control input-sm datePicker" name="publicacionHasta" placeholder="dd/mm/aaaa" autocomplete="off">
+                                <div class="input-group-addon calendar"><span class="glyphicon glyphicon-calendar"></span></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 fechas ">
+                            <label class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label">Fecha de presentación de propuestas:</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 margin-bottom-5 input-group">
+                                <input type="text" class="form-control input-sm datePicker" name="presentacionPropuestasDesde" placeholder="dd/mm/aaaa" autocomplete="off">
+                                <div class="input-group-addon calendar"><span class="glyphicon glyphicon-calendar"></span></div>
+                            </div>
+                            <label class="control-label fecha">y</label>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 margin-bottom-5 input-group">
+                                <input type="text" class="form-control input-sm datePicker" name="presentacionPropuestasHasta" placeholder="dd/mm/aaaa" autocomplete="off">
+                                <div class="input-group-addon calendar"><span class="glyphicon glyphicon-calendar"></span></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 cuce">
+                            <label class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label">CUCE:</label>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 margin-bottom-5 padding-0">
+                                <input type="number" class="form-control input-sm" name="cuce1" maxlength="2" min="02" max="24" autocomplete="off">
+                            </div>
+                            <label class="linea-cuce">-</label>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 margin-bottom-5 padding-0">
+                                <input type="text" class="form-control input-sm" name="cuce2" maxlength="4" autocomplete="off">
+                            </div>
+                            <label class="linea-cuce">-</label>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 margin-bottom-5 padding-0">
+                                <input type="text" class="form-control input-sm" name="cuce3" maxlength="2" autocomplete="off">
+                            </div>
+                            <label class="linea-cuce">-</label>
+                            <div class="col-lg-2 col-md-1 col-sm-1 col-xs-12 margin-bottom-5 padding-0">
+                                <input type="number" class="form-control input-sm" name="cuce4" value="" autocomplete="off">
+                            </div>
+                            <label class="linea-cuce">-</label>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 margin-bottom-5 padding-0">
+                                <input type="number" class="form-control input-sm" name="cuce5" maxlength="2" min="0" value="" autocomplete="off">
+                            </div>
+                            <label class="linea-cuce">-</label>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 margin-bottom-5 padding-0">
+                                <input type="text" class="form-control input-sm" name="cuce6" maxlength="2" value="" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <label class="col-lg-4 col-md-4 col-sm-4 control-label">Ver:</label>
+                            <div class="col-lg-8 col-md-8 col-sm-8 padding-0">
+                                <label class="radio-inline">
+                                    <div class="iradio_minimal-blue checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="radio" name="r1" class="minimal" value="11" checked="" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Sólo Vigentes
+                                </label>
+                                <label class="radio-inline">
+                                    <div class="iradio_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="radio" name="r1" class="minimal" value="" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Todos                                    
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                            <label class="col-lg-4 col-md-4 col-sm-4 control-label">Subasta:</label>
+                            <div class="col-lg-8 col-md-8 col-sm-8 padding-0">
+                                <label class="radio-inline">
+                                    <div class="iradio_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="radio" name="subasta" class="minimal" value="S" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Si
+                                </label>
+
+                                <label class="radio-inline">
+                                    <div class="iradio_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="radio" name="subasta" class="minimal" value="N" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> No
+                                </label>
+                                <label class="radio-inline">
+                                    <div class="iradio_minimal-blue checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="radio" name="subasta" class="minimal" value="" checked="" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Todos
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            <h5 class="text-muted">Tipo de Contratación Agrupado:</h5>
+                                <div class="pull-left">
+                                    <label class="checkbox-inline"><div class="icheckbox_minimal-blue checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" value="B" class="minimal" name="bienes" checked="" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Bienes</label>
+                                    <label class="checkbox-inline"><div class="icheckbox_minimal-blue checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" value="O" class="minimal" name="obras" checked="" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Obras</label>
+                                    <label class="checkbox-inline"><div class="icheckbox_minimal-blue checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" value="S" class="minimal" name="servicios" checked="" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Servicios Generales</label>
+                                    <label class="checkbox-inline"><div class="icheckbox_minimal-blue checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" value="C" class="minimal" name="consultoria" checked="" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Servicios de Consultoría</label>
+                                </div>
+                                                        <div class="pull-right">
+                                <input type="hidden" name="tipo" value="Simple" autocomplete="off">
+                                <input type="hidden" name="varSesionCli" value="EnaukVqZ" autocomplete="off">
+                                <input class="btn btn-primary btn-sm busquedaForm" type="submit" value="Buscar" data-operacion="convNacional" data-tipo="Simple" data-form="btnConvNacionalInter" autocomplete="off">
+                                <input class="btn btn-default btn-sm limpiarForm" type="button" value="Limpiar" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="table-responsive width100">
+                <table id="tablaSimple" class="table dataTable table-hover table-striped table-bordered table-condensed">
+                    <thead>
+                    <tr>
+                        <th>CUCE:</th>
+                        <th>Entidad:</th>
+                        <th>Tipo Contratación:</th>
+                        <th>Modalidad:</th>
+                        <th>Objeto de Contratación:</th>
+                        <th>Subasta</th>
+                        <th>Fecha Publicación:</th>
+                        <th>Fecha Presentación:</th>
+                        <th>Estado:</th>
+                        <th>Archivos:</th>
+                        <th>Formularios:</th>
+                        <th>Reportes:</th>
+                    </tr>
+                    </thead>
+                <tbody><tr><td>24-0293-00-1510377-1-1</td><td>Fundacion Cultural Del Banco Central De Bolivia </td><td>Servicios Generales</td><td>ANPE</td><td>Servicio De Limpieza Y Desinfección De La Casa Museo Inés Córdova – Gil Imana Gestión 2025 – Mna (Recurrente)</td><td>Si</td><td>13/12/2024</td><td>20/12/2024</td><td>Vigente</td><td><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3mcpZWPnJ93dHdjiZqwaZKfnqvLeJC0inKEjnqcnZWUnKOCdXNgvdbcqg==');">Documento Base de Contratacion</a><br><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3mcpZWPnJ93dHdjiZqwaZKfnqvLd62HiHSGi3ubn5SSoKd9dHCWyMrx');">Convocatoria</a><br></td><td><a href="javascript:void(0);" onclick="openWindownx0('YJOd49/cmr3HxXG4ybvXnZKSmaN4s6qimMrpb5einqqebYGCiHJ/i36bnJWZo5x7cHNYvM22ZpmnqLGhbQ==');">FORM 100</a><br></td><td><a target="_blank" href="/portal/contrataciones/ficha/fichaProceso.php?cp=24-0293-00-1510377-1-1">Ver Ficha</a></td></tr><tr><td>24-0411-00-1510407-1-1</td><td>Corporacion Del Seguro Social Militar - Cossmil</td><td>Servicios Generales</td><td>ANPP</td><td>Contratación De Servicios Médicos Recurrentes, Gestión 2025 – Licenciados Bioquimicos  Para La Macro Regional "Cossmil" Cochabamba</td><td>Si</td><td>13/12/2024</td><td>24/12/2024</td><td>Vigente</td><td><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3menZOPnJ93dHdjiZupaZKfnqvLeJC0inKEjnqcnZWUnqJ8c3hgvdbcqg==');">Documento Base de Contratacion</a><br><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3menZOPnJ93dHdjiZupaZKfnqvLd62HiHSGi3ubn5SUn6F7enCWyMrx');">Convocatoria</a><br></td><td><a href="javascript:void(0);" onclick="openWindownx0('YJOd49/cmr3HxXG4ybvXnZKSmaN4s6qimMrpb5einqqgZX+CiHJ/i36bnJaSo5x7cHNYvM22ZpmnqLKfZw==');">FORM 100</a><br></td><td><a target="_blank" href="/portal/contrataciones/ficha/fichaProceso.php?cp=24-0411-00-1510407-1-1">Ver Ficha</a></td></tr><tr><td>24-1345-00-1510397-1-1</td><td>Gobierno Autonomo Municipal De Entre Rios Cbba</td><td>Consultoria</td><td>ANPE</td><td>Contratación De Consultores Individuales De Linea - Técnico Estadístico Hospital 2do Nivel Y Personal De Limpieza Hospital 2do Nivel - Ítems Declarados Desierta</td><td>No</td><td>13/12/2024</td><td>20/12/2024</td><td>Vigente</td><td><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3qdoJePnJ93dHdjiZqyaZKfnqvLeJC0inKEjnqcnZWUnaOBd3Zgvdbcqg==');">Documento Base de Contratacion</a><br><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3qdoJePnJ93dHdjiZqyaZKfnqvLd62HiHSGi3ubn5SToKZ/d3CWyMrx');">Convocatoria</a><br></td><td><a href="javascript:void(0);" onclick="openWindownx0('YJOd49/cmr3HxXG4ybvXnZKSmaN4s6qimMrpb5einqufaIOCiHJ/i36bnJWbo5x7cHNYvM22ZpmnqLKdaw==');">FORM 100</a><br></td><td><a target="_blank" href="/portal/contrataciones/ficha/fichaProceso.php?cp=24-1345-00-1510397-1-1">Ver Ficha</a></td></tr><tr><td>24-0411-00-1510093-1-1</td><td>Corporacion Del Seguro Social Militar - Cossmil</td><td>Bienes</td><td>CM</td><td>Adquisicion  De Medicamento  Extra Vademecum Cetuximab 100 Mg-10 Frascos Para  El Pcte. Cs. 791123 Vla  Del Hospital Militar Central</td><td>No</td><td>13/12/2024</td><td>18/12/2024</td><td>Vigente</td><td><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3menZOPnJ93dHdjiZeyZZKfnqvLg5y0inKEjnqcnZWUnqGAdHVgycvf');">Oferta del Proveedor Identificado</a><br><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3menZOPnJ93dHdjiZeyZZKfnqvLg5i0inKEjnqcnZWUnqGAdXNgycvf');">Declaración Jurada del Proveedor</a><br></td><td><a href="javascript:void(0);" onclick="openWindownx0('YJOd49/cmr3HxXG4ybvXnZOSmt+ys4GVyaSrZpKepaudYX6FhXOHi3mapZWPnZx7aaWYlputa5ulqas=');">FORM 110</a><br></td><td><a target="_blank" href="/portal/contrataciones/ficha/fichaProceso.php?cp=24-0411-00-1510093-1-1">Ver Ficha</a></td></tr><tr><td>24-1303-00-1510236-1-1</td><td>Gobierno Autonomo Municipal De Sipe Sipe</td><td>Bienes</td><td>ANPE</td><td>Compra De Cemento Para Muro De Contención Palaca Corregimiento</td><td>Si</td><td>13/12/2024</td><td>19/12/2024</td><td>Vigente</td><td><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3qdnJWPnJ93dHdjiZmsaJKfnqvLeJC0inKEjnqcnZWUnqF9dHNgvdbcqg==');">Documento Base de Contratacion</a><br><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3qdnJWPnJ93dHdjiZmsaJKfnqvLd62HiHSGi3ubn5SUnqJ8dnCWyMrx');">Convocatoria</a><br></td><td><a href="javascript:void(0);" onclick="openWindownx0('YJOd49/cmr3HxXG4ybvXnZKSmaN4s6qimMrpb5einqufZIGCiHJ/i36bnJSVopx7cHNYvM22ZpmnqKylZA==');">FORM 100</a><br></td><td><a target="_blank" href="/portal/contrataciones/ficha/fichaProceso.php?cp=24-1303-00-1510236-1-1">Ver Ficha</a></td></tr><tr><td>24-1604-00-1510402-1-1</td><td>Gobierno Autonomo Municipal De Yacuiba</td><td>Bienes</td><td>CM</td><td>Adquisicion De Verduras, Hortalizas, Frutas Y Pan Destinado Al Servicio De Alimentacion Y Nutricion Del H.M.D.R.Z.</td><td>No</td><td>13/12/2024</td><td>18/12/2024</td><td>Vigente</td><td><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3qgnJaPnJ93dHdjiZupZJKfnqvLg5y0inKEjnqcnZWUnqCCd3Ngycvf');">Oferta del Proveedor Identificado</a><br><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3qgnJaPnJ93dHdjiZupZJKfnqvLg5i0inKEjnqcnZWUnqCCd3tgycvf');">Declaración Jurada del Proveedor</a><br></td><td><a href="javascript:void(0);" onclick="openWindownx0('YJOd49/cmr3HxXG4ybvXnZOSmt+ys4GVyaSrZpKfp6qgYX6FhXOHi3menJSPnZx7aaWYlputa5ymo64=');">FORM 110</a><br></td><td><a target="_blank" href="/portal/contrataciones/ficha/fichaProceso.php?cp=24-1604-00-1510402-1-1">Ver Ficha</a></td></tr><tr><td>24-1265-00-1510401-1-1</td><td>Gobierno Autonomo Municipal De Coroico</td><td>Consultoria</td><td>OF</td><td>Auditoria Financiera Del Proyecto “Producción De Pollos Parrilleros En La Central Agraria Villa Rosario Municipio De Coroico”, Financiado Por El Fondo De Desarrollo Indigena – Fdi</td><td>No</td><td>13/12/2024</td><td>24/12/2024</td><td>Vigente</td><td><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3qcopePnJ93dHdjiZupY5KfnqvLeJC0inKEjnqcnZWUnp96eHZgvdbc');">Documento Base de Contratacion</a><br><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3qcopePnJ93dHdjiZupY5KfnqvLd62HiHSGi3ubn5SUnKB6e3CWyMrx');">Convocatoria</a><br></td><td><a href="javascript:void(0);" onclick="openWindownx0('YJOd49/cmr3HxXG4ybvXnZKSmaN4s6qimMrpb5einqueaoOCiHJ/i36bnJaSnZx7cHNYvM22ZpmnqLKeZw==');">FORM 100</a><br></td><td><a target="_blank" href="/portal/contrataciones/ficha/fichaProceso.php?cp=24-1265-00-1510401-1-1">Ver Ficha</a></td></tr><tr><td>24-1345-00-1510340-1-1</td><td>Gobierno Autonomo Municipal De Entre Rios Cbba</td><td>Consultoria</td><td>ANPE</td><td>Contratación De Consultores Individuales De Linea - Medico Iii C.S. Entre Ríos Y Medico Ii C.S. Isarzama - Ítems Declarados Desierta</td><td>No</td><td>13/12/2024</td><td>20/12/2024</td><td>Vigente</td><td><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3qdoJePnJ93dHdjiZqtYpKfnqvLeJC0inKEjnqcnZWUnqB7c3dgvdbcqg==');">Documento Base de Contratacion</a><br><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3qdoJePnJ93dHdjiZqtYpKfnqvLd62HiHSGi3ubn5SUnaB7dXCWyMrx');">Convocatoria</a><br></td><td><a href="javascript:void(0);" onclick="openWindownx0('YJOd49/cmr3HxXG4ybvXnZKSmaN4s6qimMrpb5einqufaIOCiHJ/i36bnJWWnJx7cHNYvM22ZpmnqLCcaA==');">FORM 100</a><br></td><td><a target="_blank" href="/portal/contrataciones/ficha/fichaProceso.php?cp=24-1345-00-1510340-1-1">Ver Ficha</a></td></tr><tr><td>24-1302-00-1510392-1-1</td><td>Gobierno Autonomo Municipal De Quillacollo</td><td>Bienes</td><td>ANPE</td><td>Adquisicion De Tuberia Y Elementos Prefabricados Para Mantenimiento Del Alcantarillado D-2</td><td>Si</td><td>13/12/2024</td><td>20/12/2024</td><td>Vigente</td><td><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3qdnJSPnJ93dHdjiZqyZJKfnqvLeJC0inKEjnqcnZWUnaR+eHlgvdbcqg==');">Documento Base de Contratacion</a><br><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3qdnJSPnJ93dHdjiZqyZJKfnqvLd62HiHSGi3ubn5SToaR6dXCWyMrx');">Convocatoria</a><br></td><td><a href="javascript:void(0);" onclick="openWindownx0('YJOd49/cmr3HxXG4ybvXnZKSmaN4s6qimMrpb5einqufZICCiHJ/i36bnJWbnpx7cHNYvM22ZpmnqLKcaw==');">FORM 100</a><br></td><td><a target="_blank" href="/portal/contrataciones/ficha/fichaProceso.php?cp=24-1302-00-1510392-1-1">Ver Ficha</a></td></tr><tr><td>24-0902-39-1505097-1-2</td><td>Hospital De La Mujer</td><td>Servicios Generales</td><td>ANPP</td><td>Contratación De Servicio De Lavandería - Recurrente 2025
+(Servicios Generales)</td><td>Si</td><td>13/12/2024</td><td>24/12/2024</td><td>Vigente</td><td><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3mjnJSPn6h3dHdijpeyaZKfnqzLd62HiHSGi3ubn5SToaN7dHCWyMrx');">Convocatoria</a><br><a href="javascript:void(0);" onclick="openWindownx1('YJOdo6qeaH+Hh3SGh3mjnJSPn6h3dHdijpeyaZKfnqzLeJC0inKEjnqcnZWUnaR+c3Ngvdbcqg==');">Documento Base de Contratacion</a><br></td><td><a href="javascript:void(0);" onclick="openWindownx0('YJOd49/cmr3HxXG4ybvXnZKSmaN4s6qimMrpb5einqqlZICCi3t/i36aoZKbo5x7cHRYvM22ZpmnqLGhZg==');">FORM 100</a><br></td><td><a target="_blank" href="/portal/contrataciones/ficha/fichaProceso.php?cp=24-0902-39-1505097-1-2">Ver Ficha</a></td></tr></tbody></table><div id="tablaSimple_paginate"><div class="dataTables_info" aria-live="polite">Se han encontrado 2109 registros</div><div class="text-center"><div id="tablaSimple_paginate" class="text-center"><nav><ul class="pagination"><li class="active"><a href="javascript:void(0);" onclick="busquedadraw(&quot;1&quot;);">1</a></li><li class=""><a href="javascript:void(0);" onclick="busquedadraw(&quot;2&quot;);">2</a></li><li class=""><a href="javascript:void(0);" onclick="busquedadraw(&quot;3&quot;);">3</a></li><li class=""><a href="#" aria-label="Next">...</a></li><li class=""><a href="javascript:void(0);" onclick="busquedadraw('211');">211</a></li><li class=""><a href="javascript:void(0);" onclick="busquedadraw('2');" aria-label="Next">Siguiente</a></li></ul></nav></div></div></div>
+            </div>
+        </div>
+        <!--Busqueda Avanzada-->
+        <div id="f-avanzada" class="tab-pane fade in ">
+            <span class="glyphicon glyphicon-minus btn-collapse" data-toggle="collapse" href="#formAvanzada"></span>
+            <form id="formAvanzada" class="form-horizontal width100 collapse in" onsubmit="return buscarConvocatorias('Avanzada','tablaAvanzada','formAvanzada',null,'convNacional')" autocomplete="off">
+                <div class="form-busq">
+                    <div class="row">
+                        <h5 class="col-lg-1 col-md-1 col-sm-2 col-xs-12 text-muted">Convocante</h5>
+                        <div class="col-lg-11 col-md-11 col-sm-10 col-xs-12 padding-0">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <label class="col-lg-3 col-md-4 col-sm-4 col-xs-12 control-label">Entidad:</label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 padding-0 margin-bottom-5">
+                                    <input type="text" name="entidad" class="form-control input-sm" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label">Departamento:</label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 padding-0 margin-bottom-5"><select class="TextoBotones form-control input-sm" name="codigoDpto" id="codigoDpto"><option value="">Seleccione</option><option value="02">La Paz</option><option value="01">Chuquisaca</option><option value="03">Cochabamba</option><option value="04">Oruro</option><option value="05">Potosi</option><option value="06">Tarija</option><option value="07">Santa Cruz</option><option value="08">Beni</option><option value="09">Pando</option><option value="NA">No Aplica</option></select></div>
+                            </div>
+                        </div>
+                        <h5 class="col-lg-1 col-md-1 col-sm-2 col-xs-12 text-muted">Proceso</h5>
+                        <div class="col-lg-11 col-md-11 col-sm-10 col-xs-12 padding-0">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 cuce">
+                                <label class="col-lg-3 col-md-4 col-sm-4 col-xs-12 control-label">CUCE:</label>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 margin-bottom-5 padding-0">
+                                    <input type="number" class="form-control input-sm" name="cuce1" maxlength="2" min="02" max="24" autocomplete="off">
+                                </div>
+                                <label class="linea-cuce">-</label>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 margin-bottom-5 padding-0">
+                                    <input type="text" class="form-control input-sm" name="cuce2" maxlength="4" autocomplete="off">
+                                </div>
+                                <label class="linea-cuce">-</label>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 margin-bottom-5 padding-0">
+                                    <input type="text" class="form-control input-sm" name="cuce3" maxlength="2" autocomplete="off">
+                                </div>
+                                <label class="linea-cuce">-</label>
+                                <div class="col-lg-2 col-md-1 col-sm-1 col-xs-12 margin-bottom-5 padding-0">
+                                    <input type="number" class="form-control input-sm" name="cuce4" autocomplete="off">
+                                </div>
+                                <label class="linea-cuce">-</label>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 margin-bottom-5 padding-0">
+                                    <input type="number" class="form-control input-sm" name="cuce5" maxlength="2" min="0" autocomplete="off">
+                                </div>
+                                <label class="linea-cuce">-</label>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 margin-bottom-5 padding-0">
+                                    <input type="text" class="form-control input-sm" name="cuce6" maxlength="2" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label">Objeto:</label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 padding-0 margin-bottom-5">
+                                    <input type="text" class="form-control input-sm" name="objetoContrato" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <label class="col-lg-3 col-md-4 col-sm-4 col-xs-12 control-label">Modalidad:</label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 padding-0 margin-bottom-5"><select class="TextoBotones form-control input-sm" name="codigoModalidad" id="codigoModalidad"><option value="">Seleccione</option><option value="CM">Contratacion Menor</option><option value="LP">Licitacion Publica</option><option value="EX">Contratacion por Excepcion</option><option value="ANPE">Apoyo Nacional a la Produccion y Empleo (hasta Bs. 200.000)</option><option value="ANPP">Apoyo Nacional a la Produccion y Empleo (de Bs. 200.001 adelante)</option><option value="CD">Contratacion Directa</option><option value="EM">Contratacion por Emergencia</option><option value="OF">Otras modalidades</option><option value="CND1">Compra Nacional Directa</option><option value="CNC">Compra Nacional por Convocatoria</option><option value="COOF">Concurso de Ofertas</option></select></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label">Estado:</label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 padding-0 margin-bottom-5"><select class="TextoBotones form-control input-sm" name="r1" id="r1"><option value="">Seleccione</option><option value="3J">En curso sin contrato firmado</option><option value="4J">En curso sin recepcion definitiva</option><option value="11" selected="">Vigente</option><option value="12">No Informado</option><option value="1S">Suspendido</option><option value="1A">Anulado</option><option value="2D">Desierto</option><option value="2C">Contratado</option><option value="2X">Cancelado</option><option value="1C">En curso</option><option value="2A">Anulado desde la convocatoria</option><option value="1J">Con plazo vencido (Justificado)</option><option value="2J">Sin documentacion de cierre</option><option value="2E">Eliminado por duplicidad incurrida por la entidad</option><option value="2F">Eliminado (registro erroneo)</option><option value="5J">Sin informacion de Contrato</option><option value="6J">Sin informacion de Recepcion Definitiva</option><option value="7J">Sin informacion de Contrato ni Recepcion</option><option value="1D">Adjudicado</option><option value="2D1">Desierto Parcial</option><option value="2A1">Anulado Parcial</option><option value="2X1">Cancelado Parcial</option><option value="1S1">Suspendido Parcial</option></select></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <label class="col-lg-3 col-md-4 col-sm-4 col-xs-12 control-label">Tipo de contratación:</label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 padding-0 margin-bottom-5"><select class="TextoBotones form-control input-sm" name="codigoContrato" id="codigoContrato"><option value="">Seleccione</option><option value="B">Bienes</option><option value="O">Obras</option><option value="S">Servicios Generales</option><option value="C">Consultoria</option></select></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label">Nro. de contrato:</label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 padding-0 margin-bottom-5">
+                                    <input type="text" class="form-control input-sm" name="nroContrato" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <label class="col-lg-3 col-md-4 col-sm-4 col-xs-12 control-label">Normativa:</label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 padding-0 margin-bottom-5"><select class="TextoBotones form-control input-sm" name="codigoNormativa" id="codigoNormativa"><option value="">Seleccione</option><option value="1549EJ">Ley 1549 Elecciones Judiciales 2024</option><option value="181">NB-SABS (D.S.0181)</option><option value="4505">Compro Hecho en Bolivia (D.S.4505)</option><option value="29190">NB-SABS (29190)</option><option value="BID">Normativa del Financiador (BID)</option><option value="BM">Normativa del Financiador (BM)</option><option value="25964">NB-SABS (25964)</option><option value="26685">NB-SABS (26685 - Mun.)</option><option value="26842">NB-SABS (26842 - Obras)</option><option value="27328">NB-SABS (27328)</option><option value="225557">SPO</option><option value="217055">SOA</option><option value="225558">SP</option><option value="26115">SAP</option><option value="218056">ST</option><option value="218041">SCP</option><option value="26688">D.S. 26688</option><option value="227121">SCI</option><option value="29576">D.S. 29576 (Empresas Estrategicas)</option><option value="29661">D.S. 29661 (Cont. Directa de Empresas Públicas)</option><option value="0913">Programa Bolivia Cambia (D.S.0913)</option><option value="0913-2">D.S. 2511 Programa Bolivia Cambia</option><option value="2768">Decreto Supremo 2768</option><option value="3190">D.S. 3190</option><option value="3319">D.S. 3319 (Adquisición y dist. De Subsidios)</option><option value="3173">D.S. 3173 (Dakar 2018)</option><option value="2439">D.S. 2439 FPS</option><option value="181-P">D.S. 0181 (Uso parcial BID)</option><option value="622">Ley 622 Alimentacion Escolar</option><option value="2294">D.S. 2294 mod por D.S. 2471 Prov. no Comerciales</option><option value="3639">D.S. 3639 OECOM's</option><option value="3728">D.S. 3728 SENATEX</option><option value="3548">D.S. 1841 mod por D.S. 3548 Ent. Bancaria Publica</option><option value="3830">D.S. 3830 SUS</option><option value="4174">D.S. 4174 (COVID-19)</option><option value="ON">Otra Normativa especifica nacional</option><option value="NF">Normativa del Financiador</option><option value="EMSAN">Contratación por Emergencia Sanitaria (D.S. 4542)</option><option value="O">Otra Normativa especifica</option></select></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 fechas">
+                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label">Monto en Bs.:</label>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 margin-bottom-5 input-group">
+                                    <input type="text" class="form-control input-sm" name="montoDesde" placeholder="Desde" autocomplete="off">
+                                    <div class="input-group-addon">$</div>
+                                </div>
+                                <label class="control-label fecha">-</label>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 margin-bottom-5 input-group">
+                                    <input type="text" class="form-control input-sm" name="montoHasta" placeholder="Hasta" autocomplete="off">
+                                    <div class="input-group-addon">$</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="col-lg-1 col-md-1 col-sm-2 col-xs-12 text-muted">Fechas del Proceso</h5>
+                        <div class="col-lg-11 col-md-11 col-sm-10 col-xs-12 padding-0">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 fechas">
+                                <label class="col-lg-3 col-md-4 col-sm-4 col-xs-12 control-label">Publicación:</label>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 margin-bottom-5 input-group">
+                                    <input type="text" class="form-control input-sm datePicker" name="publicacionDesde" placeholder="dd/mm/aaaa" autocomplete="off">
+                                    <div class="input-group-addon calendar"><span class="glyphicon glyphicon-calendar"></span></div>
+                                </div>
+                                <label class="control-label fecha">y</label>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 margin-bottom-5 input-group">
+                                    <input type="text" class="form-control input-sm datePicker" name="publicacionHasta" placeholder="dd/mm/aaaa" autocomplete="off">
+                                    <div class="input-group-addon calendar"><span class="glyphicon glyphicon-calendar"></span></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 fechas">
+                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-12 control-label">Presentación:</label>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 margin-bottom-5 input-group">
+                                    <input type="text" class="form-control input-sm datePicker" name="presentacionPropuestasDesde" placeholder="dd/mm/aaaa" autocomplete="off">
+                                    <div class="input-group-addon calendar"><span class="glyphicon glyphicon-calendar"></span></div>
+                                </div>
+                                <label class="control-label fecha">y</label>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 margin-bottom-5 input-group">
+                                    <input type="text" class="form-control input-sm datePicker" name="presentacionPropuestasHasta" placeholder="dd/mm/aaaa" autocomplete="off">
+                                    <div class="input-group-addon calendar"><span class="glyphicon glyphicon-calendar"></span></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 fechas">
+                                <label class="col-lg-3 col-md-4 col-sm-4 col-xs-12 control-label">Desierta / Adjudicación:</label>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 margin-bottom-5 input-group">
+                                    <input type="text" class="form-control input-sm datePicker" name="desiertaDesde" placeholder="dd/mm/aaaa" autocomplete="off">
+                                    <div class="input-group-addon calendar"><span class="glyphicon glyphicon-calendar"></span></div>
+                                </div>
+                                <label class="control-label fecha">y</label>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 margin-bottom-5 input-group">
+                                    <input type="text" class="form-control input-sm datePicker" name="desiertaHasta" placeholder="dd/mm/aaaa" autocomplete="off">
+                                    <div class="input-group-addon calendar"><span class="glyphicon glyphicon-calendar"></span></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <label class="col-lg-4 col-md-4 col-sm-4 control-label">Subasta:</label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 padding-0">
+                                    <label class="radio-inline">
+                                        <div class="iradio_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="radio" name="subasta" class="minimal" value="S" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Si
+                                    </label>
+                                    <label class="radio-inline">
+                                        <div class="iradio_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="radio" name="subasta" class="minimal" value="N" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> No
+                                    </label>
+                                    <label class="radio-inline">
+                                        <div class="iradio_minimal-blue checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="radio" name="subasta" class="minimal" value="" checked="" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Todos
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-muted">Mostrar los siguientes Campos Adicionales:</h5>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <label class="checkbox-inline"><div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="minimal" name="personaContDespliegue" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Persona de contacto</label>
+                            <label class="checkbox-inline"><div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" value="option2" class="minimal" name="nomtoGarDespliegue" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Monto garantía</label>
+                            <label class="checkbox-inline"><div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" value="option3" class="minimal" name="costoPlieDespliegue" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Costo pliego</label>
+                            <label class="checkbox-inline"><div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" value="option3" class="minimal" name="arpcDespliegue" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> A.R.P.C.</label>
+                            <label class="checkbox-inline"><div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" value="option1" class="minimal" name="fechaReunionDespliegue" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Fecha reunión aclaración </label>
+                            <label class="checkbox-inline"><div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" value="option2" class="minimal" name="fechaAdjudicacionDespliegue" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Fecha de adjudicación</label>
+                            <label class="checkbox-inline"><div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" value="option3" class="minimal" name="dptoDespliegue" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Departamento</label>
+                            <label class="checkbox-inline"><div class="icheckbox_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" value="option3" class="minimal" name="normativaDespliegue" autocomplete="off" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Normativa</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 control-label btns padding-0">
+                        <input type="hidden" name="tipo" value="Avanzada" autocomplete="off">
+                        <input type="hidden" name="varSesionCli" value="EnaukVqZ" autocomplete="off">
+                        <input class="btn btn-primary btn-sm busquedaForm" type="submit" value="Buscar" data-operacion="convNacional" data-tipo="Avanzada" data-form="btnConvNacionalInter" autocomplete="off">
+                        <input class="btn btn-default btn-sm limpiarForm" type="button" value="Limpiar" autocomplete="off">
+                    </div>
+                </div>
+            </form>
+            <div class="table-responsive width100">
+                <table id="tablaAvanzada" class="table dataTable table-hover table-striped table-bordered table-condensed">
+                    <thead>
+                    <tr>
+                        <th>CUCE:</th>
+                        <th>Entidad:</th>
+                        <th>Tipo de Contratación:</th>
+                        <th>Modalidad:</th>
+                        <th>Objeto de Contratación:</th>
+                        <th>Subasta:</th>
+                        <th>Fecha Publicación:</th>
+                        <th>Fecha Presentación:</th>
+                        <th>Estado:</th>
+                        <th>Archivos:</th>
+                        <th>Formularios:</th>
+                        <th>Ficha del proceso:</th>
+                        <th>Persona contacto:</th>
+                        <th>Garantía:</th>
+                        <th>CostoPliego:</th>
+                        <th>ARPC:</th>
+                        <th>Reunión aclaración:</th>
+                        <th>Fecha Adjudicación / Desierta:</th>
+                        <th>Departamento:</th>
+                        <th>Normativa:</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="/lib/js/app/portal/contrataciones/convocatorias.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(window).keydown(function(event){
+                if((event.keyCode == 13) && ($(event.target)[0]!=$("textarea")[0])) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        });
+    </script>
+
+				</div>
+			</div>
+			<!-- footer -->
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6" style="text-align: left">
+                            <p><span class="glyphicon glyphicon-home"></span><strong>&nbsp;Dirección:</strong> Edif. Contraloría General del
+                                Estado, Piso 7, Calle Colón, esq. Indaburo, La Paz, Bolivia</p>
+                            <p><span class="glyphicon glyphicon-earphone"></span><strong>&nbsp;&nbsp;Línea Gratuita:</strong> 800-10-6337</p>
+                            <p><span class="glyphicon glyphicon-phone-alt"></span><strong> Teléfono:</strong> (591-2) 2177300</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <p><strong>HORARIOS DE ATENCIÓN<br>Lunes a Viernes</strong></p>
+                            <div class="col-lg-12">
+                                <p>De 8:30 a 16:30</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <p><strong>REDES SOCIALES</strong></p>
+                            <div>
+                                <div class="col-lg-6">
+                                    <a href="https://www.facebook.com/SicoesBo">
+                                        <span class="facebook"></span>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <a href="https://www.youtube.com/@SicoesBol">
+                                        <span class="youtube"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+                <div class="text-center" style="width: 100%;">
+                    <img style="height: 60px;" src="/img/portal/200BicentenarioBolivia.jpg">
+                    <img style="height: 90px;" src="/img/portal/imagen-gobierno_horizontal_economia-rgb.png">
+                </div>
+		</div>
+                <!-- -->
+                <script src="/lib/download/developer_console.min.js"></script>
+		<!-- js -->
+		<script src="/lib/js/external/bootstrap/bootstrap.min.js"></script>
+		<!-- Highcharts -->
+		<script src="/lib/js/external/Highcharts/highcharts.js"></script>
+		<script src="/lib/js/external/Highcharts/highcharts-3d.js"></script>
+		<script src="/lib/js/external/Highcharts/exporting.js"></script>
+		<script src="/lib/js/external/Highcharts/drilldown.js"></script>
+		<!-- DataTables -->
+		<script src="/lib/js/external/datatables/jquery.dataTables.min.js"></script>
+		<script src="/lib/js/external/datatables/dataTables.bootstrap.js"></script>
+		<!-- iCheck 1.0.1 -->
+		<script src="/lib/js/external/adminTemplate/icheck.min.js"></script>
+		<!-- Datepicker -->
+		<script src="/lib/js/external/datepicker/bootstrap-datepicker.js"></script>
+		<script src="/lib/js/external/datepicker/bootstrap-datepicker.es.js" charset="UTF-8"></script>
+		<!-- Nprogress -->
+		<script src="/lib/js/external/nprogress/nprogress.js"></script>
+		<!-- Template -->
+		<script src="/lib/js/app/comun.js"></script><!--nsilva cambio de orden de script-->
+		<script type="text/javascript" src="/lib/js/external/portal/move-top.js"></script>
+		<script type="text/javascript" src="/lib/js/external/portal/easing.js"></script>
+		<script type="text/javascript" src="/lib/js/app/portal/portal.js"></script>
+		<script src="/lib/js/app/portal/busqueda.js"></script>
+		<script src="/lib/js/app/portal/contrataciones.js"></script>
+		<script src="/lib/js/app/portal/rupe.js"></script>
+		<script src="/lib/js/app/portal/incumplidos.js"></script>
+		<script src="/lib/js/app/portal/clasificadores.js"></script>
+		<script src="/lib/js/app/portal/normativas/normativas.js"></script>
+		<script src="/lib/js/app/portal/comunicados.js"></script>
+		<script src="/lib/js/app/portal/estadisticas.js"></script>
+		<!--Downloads-->
+		<script src="/lib/download/downloadserpub.min.js"></script>
+		<script src="/lib/download/downloadprint.js"></script>
+		<script src="/lib/js/external/print/jQuery.print.js"></script>
+		<script src="/lib/js/external/timer/jquery.lwtCountdown-1.0.js"></script>
+		<script src="/lib/download/protect.min.js"></script>
+				<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-59533158-2"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-59533158-2');
+		</script>
+	
+
+<div class="modal fade in  downloadfile" role="dialog" id="modal-download" data-keyboard="false" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>×</span>
+                </button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body banner-bottom-grid-right-gridprv ">
+
+
+                <div class="alert alert-success" id="modowalertsuccess" hidden="true">
+                    <button type="button" class="close" onclick="cerraralmo('modowalertsuccess')">×</button>
+                    <strong>Informacion </strong>
+                    <label id="modowalertsuccesslab">
+                </label></div>
+                <div class="alert alert-info" id="modowalertinfo" hidden="true">
+                    <button type="button" class="close" onclick="cerraralmo('modowalertinfo')">×</button>
+                    <strong>Informacion </strong>
+                    <label id="modowalertinfolab">
+                </label></div>
+                <div class="alert alert-warning" id="modowalertwarning" hidden="true">
+                    <button type="button" class="close" onclick="cerraralmo('modowalertwarning')">×</button>
+                    <strong>Informacion </strong>
+                    <label id="modowalertwarninglab">
+                </label></div>
+                <div class="alert alert-danger" id="modowalertdanger" hidden="true"> 
+                    <button type="button" class="close" onclick="cerraralmo('modowalertdanger')">×</button>
+                    <strong>Peligro!</strong>
+                    <label id="modowalertdangerlab">
+                </label></div>
+
+
+                <form id="formmodald" name="formmodald" method="POST">
+                    <div class="form-group">
+
+                        <label id="formmodaldlbl1"> </label>
+
+                    </div>
+                    <div class="captcha" id="captchasp">
+                        <label></label>
+                        <input type="text" maxlength="5" size="7" name="captcha" class="form-control captcha uppercap" required="">
+                        <img>
+                        <span class="glyphicon glyphicon-refresh"></span>
+                    </div>
+                    <div class="captcha" id="captchabl">
+                        <label></label>
+
+                    </div>
+                    <div id="urldownload">
+                        <input type="hidden" id="sitedownloadaut" name="sitedownloadaut" value="">
+                        <input type="hidden" id="siteurldownload" name="siteurldownload" value="">
+                        <input type="hidden" id="iddownload" name="iddownload" value="">
+                        <input type="hidden" id="urltipo" name="urltipo" value="">
+                        <input type="hidden" id="siteccont" name="siteccont" value="">
+                        <input type="hidden" id="valsiteips" name="siteccont" value="">
+                    </div>
+                    <label id="formmodaldlbl3"></label>
+                    <div class="mail-grid-left">
+
+                        <input class="btn btndownm" type="button" value="Verificar" id="btnsubmitfordes">
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div><div class="modal fade in  formulariov" role="dialog" id="modal-formulariov" data-keyboard="false" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>×</span>
+                </button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body banner-bottom-grid-right-gridprv ">
+                <div id="visualizarformularionav" class="form-group visualizarformularionav" hidden="true">
+                    <button type="button" class="previus" id="vformatras">
+                        <span>← Anterior</span>
+                    </button>
+
+                </div>
+                <div id="visualizarformulario0" class="form-group visualizarformulariopag0" hidden="true"></div>	
+                <div id="visualizarformulario1" class="form-group visualizarformulariopag1" hidden="true"></div>	
+                <div id="visualizarformulario2" class="form-group visualizarformulariopag2" hidden="true"></div>	
+                <div id="visualizarformulario3" class="form-group visualizarformulariopag3" hidden="true"></div>	
+                <div id="visualizarformulario4" class="form-group visualizarformulariopag4" hidden="true"></div>	
+                <div id="visualizarformulario5" class="form-group visualizarformulariopag5" hidden="true"></div>	
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div><a href="#" id="toTop" style="display: none;"><span id="toTopHover"></span>To Top</a><div class="datepicker datepicker-dropdown dropdown-menu" style="display: none;"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Diciembre 2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">Do</th><th class="dow">Lu</th><th class="dow">Ma</th><th class="dow">Mi</th><th class="dow">Ju</th><th class="dow">Vi</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old">24</td><td class="day old">25</td><td class="day old">26</td><td class="day old">27</td><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td></tr><tr><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td></tr><tr><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day active">13</td><td class="day">14</td></tr><tr><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td></tr><tr><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td></tr><tr><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Ene</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Abr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Ago</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month active">Dic</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2020-2029</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year active">2024</span><span class="year">2025</span><span class="year">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year old">2030</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div></div><div class="datepicker datepicker-dropdown dropdown-menu" style="display: none;"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Diciembre 2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">Do</th><th class="dow">Lu</th><th class="dow">Ma</th><th class="dow">Mi</th><th class="dow">Ju</th><th class="dow">Vi</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old">24</td><td class="day old">25</td><td class="day old">26</td><td class="day old">27</td><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td></tr><tr><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td></tr><tr><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day active">13</td><td class="day">14</td></tr><tr><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td></tr><tr><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td></tr><tr><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Ene</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Abr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Ago</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month active">Dic</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2020-2029</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year active">2024</span><span class="year">2025</span><span class="year">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year old">2030</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div></div><div class="datepicker datepicker-dropdown dropdown-menu" style="display: none;"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Diciembre 2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">Do</th><th class="dow">Lu</th><th class="dow">Ma</th><th class="dow">Mi</th><th class="dow">Ju</th><th class="dow">Vi</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old">24</td><td class="day old">25</td><td class="day old">26</td><td class="day old">27</td><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td></tr><tr><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td></tr><tr><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day active">13</td><td class="day">14</td></tr><tr><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td></tr><tr><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td></tr><tr><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Ene</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Abr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Ago</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month active">Dic</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2020-2029</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year active">2024</span><span class="year">2025</span><span class="year">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year old">2030</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div></div><div class="datepicker datepicker-dropdown dropdown-menu" style="display: none;"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Diciembre 2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">Do</th><th class="dow">Lu</th><th class="dow">Ma</th><th class="dow">Mi</th><th class="dow">Ju</th><th class="dow">Vi</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old">24</td><td class="day old">25</td><td class="day old">26</td><td class="day old">27</td><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td></tr><tr><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td></tr><tr><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day active">13</td><td class="day">14</td></tr><tr><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td></tr><tr><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td></tr><tr><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Ene</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Abr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Ago</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month active">Dic</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2020-2029</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year active">2024</span><span class="year">2025</span><span class="year">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year old">2030</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div></div><div class="datepicker datepicker-dropdown dropdown-menu" style="display: none;"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Diciembre 2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">Do</th><th class="dow">Lu</th><th class="dow">Ma</th><th class="dow">Mi</th><th class="dow">Ju</th><th class="dow">Vi</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old">24</td><td class="day old">25</td><td class="day old">26</td><td class="day old">27</td><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td></tr><tr><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td></tr><tr><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day active">13</td><td class="day">14</td></tr><tr><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td></tr><tr><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td></tr><tr><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Ene</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Abr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Ago</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month active">Dic</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2020-2029</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year active">2024</span><span class="year">2025</span><span class="year">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year old">2030</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div></div><div class="datepicker datepicker-dropdown dropdown-menu" style="display: none;"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Diciembre 2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">Do</th><th class="dow">Lu</th><th class="dow">Ma</th><th class="dow">Mi</th><th class="dow">Ju</th><th class="dow">Vi</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old">24</td><td class="day old">25</td><td class="day old">26</td><td class="day old">27</td><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td></tr><tr><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td></tr><tr><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day active">13</td><td class="day">14</td></tr><tr><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td></tr><tr><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td></tr><tr><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Ene</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Abr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Ago</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month active">Dic</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2020-2029</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year active">2024</span><span class="year">2025</span><span class="year">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year old">2030</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div></div><div class="datepicker datepicker-dropdown dropdown-menu" style="display: none;"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Diciembre 2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">Do</th><th class="dow">Lu</th><th class="dow">Ma</th><th class="dow">Mi</th><th class="dow">Ju</th><th class="dow">Vi</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old">24</td><td class="day old">25</td><td class="day old">26</td><td class="day old">27</td><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td></tr><tr><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td></tr><tr><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day active">13</td><td class="day">14</td></tr><tr><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td></tr><tr><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td></tr><tr><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Ene</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Abr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Ago</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month active">Dic</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2020-2029</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year active">2024</span><span class="year">2025</span><span class="year">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year old">2030</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div></div><div class="datepicker datepicker-dropdown dropdown-menu" style="display: none;"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Diciembre 2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">Do</th><th class="dow">Lu</th><th class="dow">Ma</th><th class="dow">Mi</th><th class="dow">Ju</th><th class="dow">Vi</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old">24</td><td class="day old">25</td><td class="day old">26</td><td class="day old">27</td><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td></tr><tr><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td></tr><tr><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day active">13</td><td class="day">14</td></tr><tr><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td></tr><tr><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td></tr><tr><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Ene</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Abr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Ago</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month active">Dic</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2020-2029</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year active">2024</span><span class="year">2025</span><span class="year">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year old">2030</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div></div><div class="datepicker datepicker-dropdown dropdown-menu" style="display: none;"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Diciembre 2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">Do</th><th class="dow">Lu</th><th class="dow">Ma</th><th class="dow">Mi</th><th class="dow">Ju</th><th class="dow">Vi</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old">24</td><td class="day old">25</td><td class="day old">26</td><td class="day old">27</td><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td></tr><tr><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td></tr><tr><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day active">13</td><td class="day">14</td></tr><tr><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td></tr><tr><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td></tr><tr><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Ene</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Abr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Ago</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month active">Dic</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2020-2029</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year active">2024</span><span class="year">2025</span><span class="year">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year old">2030</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div></div><div class="datepicker datepicker-dropdown dropdown-menu" style="display: none;"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">Diciembre 2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr><tr><th class="dow">Do</th><th class="dow">Lu</th><th class="dow">Ma</th><th class="dow">Mi</th><th class="dow">Ju</th><th class="dow">Vi</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="day old">24</td><td class="day old">25</td><td class="day old">26</td><td class="day old">27</td><td class="day old">28</td><td class="day old">29</td><td class="day old">30</td></tr><tr><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td></tr><tr><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day active">13</td><td class="day">14</td></tr><tr><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td></tr><tr><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td></tr><tr><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="day new">1</td><td class="day new">2</td><td class="day new">3</td><td class="day new">4</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2024</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="month">Ene</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Abr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Ago</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month active">Dic</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i></th><th colspan="5" class="switch">2020-2029</th><th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i></th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year active">2024</span><span class="year">2025</span><span class="year">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year old">2030</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Hoy</th></tr></tfoot></table></div></div></body></html>
