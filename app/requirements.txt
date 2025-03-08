@@ -1,0 +1,9 @@
+Flask
+flask[async]
+pandas
+python-dotenv
+webdriver-manager
+selenium
+#Flask==2.1.2
+gunicorn==20.1.0
+werkzeug==2.0.3
