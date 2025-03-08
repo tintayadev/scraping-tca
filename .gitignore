@@ -1,1 +1,9 @@
-env/
+docker-compose.yml
+Dockerfile
+init.sql
+mysql-data
+mysql-init
+nginx
+venv
+app/__pycache__
+app/static/csv/*
