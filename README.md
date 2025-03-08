@@ -12,6 +12,10 @@ This Flask application is designed to generate a report csv of a certain page.
 - webdriver(Chrome)
 
 ### Steps to Install
+0. copy env vars
+    ``bash
+    cp app/.env.EXAMPLE app/.env
+    ``
 1. Clone the repository:
    ```bash
    python -m venv venv && source venv/bin/activate
