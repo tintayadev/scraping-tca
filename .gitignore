@@ -5,5 +5,6 @@ mysql-data
 mysql-init
 nginx
 venv
+.env
 app/__pycache__
 app/static/csv/*
